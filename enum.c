@@ -2841,13 +2841,12 @@ chunk_i(RB_BLOCK_CALL_FUNC_ARGLIST(yielder, enumerator))
  *  The following example counts words for each initial letter.
  *
  *    open("/usr/share/dict/words", "r:iso-8859-1") { |f|
- *      f.chunk { |line| line.ord }.each { |ch, lines| p [ch.chr, lines.length] }
+ *      f.chunk { |line| line.upcase.ord }.each { |ch, lines| p [ch.chr, lines.length] }
  *    }
- *    #=> ["\n", 1]
- *    #   ["A", 1327]
- *    #   ["B", 1372]
- *    #   ["C", 1507]
- *    #   ["D", 791]
+ *    #=> ["A", 17096]
+ *    #   ["B", 11070]
+ *    #   ["C", 19901]
+ *    #   ["D", 10896]
  *    #   ...
  *
  *  The following key values have special meaning:
